@@ -19,4 +19,4 @@ spec:
           ports:
             - containerPort: 80
       imagePullSecrets:            # ← 关键！
-      - name: myregistry           # 必须与上面创建的 Secret 名一致
+        - name: myregistry           # 必须与上面创建的 Secret 名一致
