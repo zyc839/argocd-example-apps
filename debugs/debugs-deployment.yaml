@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debugs
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: debugs
+  template:
+    metadata:
+      labels:
+        app: debugs
+    spec:
+      containers:
+        - image: swr.cn-east-3.myhuaweicloud.com/zack.zhang/debugs:latest
+          name: debugs
+          ports:
+            - containerPort: 80
+        imagePullSecrets:            # ← 关键！
+        - name: myregistry           # 必须与上面创建的 Secret 名一致
