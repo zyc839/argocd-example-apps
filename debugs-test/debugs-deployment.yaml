@@ -14,7 +14,7 @@ spec:
         app: debugs
     spec:
       containers:
-        - image: swr.cn-east-3.myhuaweicloud.com/zack.zhang/debugs-tail:latest
+        - image: swr.cn-east-3.myhuaweicloud.com/zack.zhang/debugs-tail:v1
           name: debugs
           ports:
             - containerPort: 80
